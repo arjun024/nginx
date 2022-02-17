@@ -28,6 +28,7 @@ jobs:
       run: |
         if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.version }}" != "" ]]; then
           echo "::set-output name=tag::${{ github.event.inputs.version }}"
+          exit 0
         fi
         echo "::set-output name=tag::some-processed-value"
 
